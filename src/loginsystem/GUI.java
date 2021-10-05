@@ -2,6 +2,9 @@ package loginsystem;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 import javax.swing.*;
 
@@ -80,6 +83,19 @@ public class GUI extends JFrame {
 		
 		f.add(fieldPassword);
 		
+		buttonLogin.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(Main.login(fieldName.getText(), fieldPassword.getText())) {
+					
+					showMessageDialog(null, "Loged in! \nHello, " + fieldName.getText() + ".");
+					
+				}
+				
+			}
+			
+		});
 		f.add(buttonLogin);
 		f.add(buttonSignIn);
 		

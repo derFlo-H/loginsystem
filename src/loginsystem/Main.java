@@ -16,7 +16,19 @@ public class Main {
 		
 		GUI e;
 		e = new GUI("e", 320, 180);
-
+		login("flo", "1234");
+		
+	}
+	
+	// Login logic
+	public static boolean login(String name, String password) {
+		if(password.equals(FileIO.input(name + ".txt"))) {
+			return true;
+			
+		}
+		
+		return false;
+		
 	}
 
 }
