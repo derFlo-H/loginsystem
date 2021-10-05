@@ -89,7 +89,7 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(Main.login(fieldName.getText(), fieldPassword.getText())) {
 					
-					showMessageDialog(null, "Loged in! \nHello, " + fieldName.getText() + ".");
+					showMessageDialog(null, "Loged in!\nHello, " + fieldName.getText() + ".");
 					
 				}
 				
