@@ -64,7 +64,7 @@ public class GUI extends JFrame {
 		f.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		// setup Layoutmanager
-		f.setLayout(new GridLayout(7, 1, 2, 2));
+		f.setLayout(new GridLayout(8, 1, 2, 2));
 		
 		// Setting frame to be visible
 		f.setVisible(true);
