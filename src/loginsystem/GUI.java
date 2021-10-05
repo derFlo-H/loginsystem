@@ -1,8 +1,7 @@
 package loginsystem;
 
 import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 
 import javax.swing.*;
 
@@ -29,6 +28,9 @@ public class GUI extends JFrame {
 	private JLabel labelName;
 	private JLabel labelPassword;
 	
+	private JButton buttonLogin;
+	private JButton buttonSignIn;
+	
 	public GUI(String _name, int _length, int _height) {
 		
 		// Getting JFrame parameters
@@ -38,12 +40,15 @@ public class GUI extends JFrame {
 		f = new JFrame();
 		
 		// setting up JComponents
-		fieldName = new JTextField("                    ");
-		fieldPassword = new JTextField("                    ");
+		fieldName = new JTextField();
+		fieldPassword = new JTextField();
 		
 		labelTitle = new JLabel("Login");
 		labelName = new JLabel("Name: ");
 		labelPassword = new JLabel("Password: ");
+		
+		buttonLogin = new JButton("LOGIN");
+		buttonSignIn = new JButton("SIGN IN");
 		
 		// initialise everything
 		init();
@@ -59,36 +64,25 @@ public class GUI extends JFrame {
 		f.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		// setup Layoutmanager
-		f.setLayout(new GridBagLayout());
-		GridBagConstraints gbc = new GridBagConstraints();
-		gbc.fill = GridBagConstraints.BOTH;
+		f.setLayout(new GridLayout(7, 1, 2, 2));
 		
 		// Setting frame to be visible
-		
 		f.setVisible(true);
 		
 		//initiate & Add JComponents
-		
-		gbc.gridx = 0;
-		gbc.gridy = 4;
-		gbc.weighty = 0.1;
 		f.add(labelTitle);
 		
-		gbc.weighty = 1;
-		gbc.gridx = 0;
-		gbc.gridy = 0;
 		f.add(labelName);
 		
-		gbc.gridx = 1;
-		fieldName.setSize(1, 20);
 		f.add(fieldName);
 		
-		gbc.gridx = 2;
 		f.add(labelPassword);
 		
-		gbc.gridx = 3;
-		fieldPassword.setSize(1, 20);
 		f.add(fieldPassword);
+		
+		f.add(buttonLogin);
+		f.add(buttonSignIn);
+		
 	}
 
 }
