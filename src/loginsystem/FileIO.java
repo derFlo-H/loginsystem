@@ -1,6 +1,6 @@
 package loginsystem;
 
-import java.io.File;
+import java.io.*;
 import java.util.Scanner;
 
 /*
@@ -11,6 +11,20 @@ import java.util.Scanner;
  */
 
 public class FileIO {
+	
+	// Method for writing to a file
+	public static void output(String fileName, String fileOutput) {
+		FileWriter out;
+		try {
+			out = new FileWriter(fileName + ".txt");
+			out.write(b);
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			
+		}
+		
+	}
 	
 	// Input method for file
 	public static String input(String fileName) {
