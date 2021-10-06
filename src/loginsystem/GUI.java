@@ -97,6 +97,14 @@ public class GUI extends JFrame {
 			
 		});
 		f.add(buttonLogin);
+		buttonSignIn.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Main.signin(fieldName.getText(), fieldPassword.getText());
+			}
+			
+		});
 		f.add(buttonSignIn);
 		
 	}

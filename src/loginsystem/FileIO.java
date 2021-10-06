@@ -15,9 +15,16 @@ public class FileIO {
 	// Method for writing to a file
 	public static void output(String fileName, String fileOutput) {
 		FileWriter out;
+		File fileOut;
 		try {
-			out = new FileWriter(fileName + ".txt");
-			out.write(b);
+			fileOut = new File(fileName + ".txt");
+			if(fileOut.createNewFile()) {
+				System.out.println("created new file");
+			}
+			
+			out = new FileWriter(fileOut);
+			out.write(fileOutput);
+			out.close();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -30,7 +37,7 @@ public class FileIO {
 	public static String input(String fileName) {
 		
 		String output = "";
-		File inputFile = new File(fileName);
+		File inputFile = new File(fileName + ".txt");
 		
 		// reading file
 		try {
